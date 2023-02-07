@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Fuel Cost Calculator</title>
+	<script>
+		function calculateFuelCost() {
+			var distance = parseFloat(document.getElementById("distance").value);
+			var fuelEfficiency = parseFloat(document.getElementById("fuelEfficiency").value);
+			var fuelPrice = parseFloat(document.getElementById("fuelPrice").value);
+			var fuelCost = (distance / fuelEfficiency) * fuelPrice;
+			document.getElementById("fuelCost").innerHTML = "Fuel Cost: Rs" + fuelCost.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+
+<h1>Fuel Cost Calculator</h1>
+	<label for="distance">Total Distance (in Kms):</label>
+	<input type="text" id="distance">
+	<br><br>
+	<label for="fuelEfficiency">Fuel Efficiency (Kms per ltrs):</label>
+	<input type="text" id="fuelEfficiency">
+	<br><br>
+	<label for="fuelPrice">Fuel Price (per ltrs):</label>
+	<input type="text" id="fuelPrice">
+	<br><br>
+	<button onclick="calculateFuelCost()">Calculate Fuel Cost</button>
+	<br><br>
+	<p id="fuelCost"></p>
+</body>
+</html>
